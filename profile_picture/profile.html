@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Profile Picture</title>
+    <link rel="stylesheet" href="./profile.css">
+</head>
+<body>
+    <div class="page">
+        <div class="card">
+            <h1>Set Your Profile</h1>
+            <img src="../images/profile.png" id="profile-pic">
+            <!-- use lable as a button  -->
+             <form id="uploadForm">
+                <div id="profileSetMessage" class="messageDiv" style="display: none;"></div>
+                <label for="input-file">Upload Image</label>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" name="imageInput">
+                <button type="submit" id="submit-img">Submit</button>
+             </form>
+        </div>    
+    </div>
+    
+
+    <script type="module" src="./profile.js"></script>
+</body>
+</html>

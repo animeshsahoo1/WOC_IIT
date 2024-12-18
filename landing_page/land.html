@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="land.css" />
+    <!------icons from fontawesome------>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- chart.js  -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="#" class="logo">logo</a>
+
+      <ul class="navlist">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <a href="#" class="btn">Log in</a>
+      </div>
+    </header>
+
+    <div class="auth" id="auth">
+      <div class="container" id="signup" style="display: none">
+        <h2 class="close"><i class="fas fa-times"></i></h2>
+
+        <h1 class="form-title">Register</h1>
+        <form method="post" action="">
+          <div
+            id="signUpMessage"
+            class="messageDiv"
+            style="display: none"
+          ></div>
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" name="Name" id="name" placeholder="name" required />
+            <label for="name">Name</label>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-globe"></i>
+            <input type="text" name="Country" id="country" placeholder="country" required />
+            <label for="country">Country</label>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="email"
+              required
+            />
+            <label for="email">Email</label>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="password"
+              required
+            />
+            <label for="password">Password</label>
+          </div>
+          <input type="submit" class="btn" value="Sign Up" name="signUp" id="submitSignUp" />
+        </form>
+
+        <div class="links">
+          <p>Already have account?</p>
+          <button id="signInButton">Sign In</button>
+        </div>
+      </div>
+      <!-- ---------------------------------login----------------------------- -->
+
+      <div class="container" id="signIn">
+        <h2 class="close"><i class="fas fa-times"></i></h2>
+
+        <h1 class="form-title">Sign In</h1>
+        <form method="post" action="">
+          <div id="signInMessage" class="messageDiv" style="display: none"></div>
+
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input
+              type="email"
+              name="email"
+              id="signInEmail"
+              placeholder="email"
+              required
+            />
+            <label for="signInEmail">Email</label>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input
+              type="password"
+              name="password"
+              id="signInpassword"
+              placeholder="password"
+              required
+            />
+            <label for="signInpassword">password</label>
+          </div>
+          <p class="recover">
+            <a href="#">Recover Password</a>
+          </p>
+          <input
+            type="submit"
+            class="btn"
+            value="Sign In"
+            name="signIn"
+            id="submitSignIn"
+          />
+        </form>
+
+        <div class="links">
+          <p>Do not have account?</p>
+          <button id="signUpButton">Sign Up</button>
+        </div>
+      </div>
+    </div>
+<!-- ----------------------------------home---------------------------------------- -->
+    <section class="home" id="home">
+      <div class="home-text">
+          <div class="main-text">
+            <h1 class="upper-text">Test Your, </h1>
+          <h1 class="down-text"> <span>Typing</span> Skills</h1>
+          </div>
+          
+  
+        <p>
+          Increase your <span class="highlight">Produtivity</span> with our
+          interactive tools and practice lessons
+        </p>
+      </div>
+      
+        <div class="home-btn">
+          <a href="#" class="btn">Get Started Now</a>
+        </div>
+      
+    </section>
+
+    <section class="second" id="about">
+      <div class="graph">
+        <canvas id="myChart" style="max-width: 60%"></canvas>
+        <div class="graph-right">
+          <h1 style="color: #fff" class="score">
+            See Where You <span class="highlight">Stand</span>
+          </h1>
+          <div class="right-box">
+            <p>
+              30 WPM is average typing speed for most people, check where you
+              stand with our leaderboard features. <br />Gain an Increase in
+              your typing speed by at least 30% by practicing in regular
+              intervals, with help of our lessons and tests.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------WHY US PAGE---------------------------------------------- -->
+
+    <section class="third-page" id="services">
+      <div class="container2">
+        <div class="write">
+          <h2 class="we">So many reasons to start</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, qui?
+          </p>
+        </div>
+
+        <div class="block">
+          <div class="sub-box1">
+            <img
+              class="third-image"
+              src="../images/Online learning-cuate 2.png"
+              alt=""
+            />
+            <h4>Take lessons</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eius
+              expedita dolor a amet magnam nesciunt vitae fugit inventore
+              minima.
+            </p>
+          </div>
+
+          <div class="sub-box1">
+            <img
+              class="third-image"
+              src="../images/Learning-cuate 3.png"
+              alt=""
+            />
+            <h4>Efficiency</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eius
+              expedita dolor a amet magnam nesciunt vitae fugit inventore
+              minima.
+            </p>
+          </div>
+
+          <div class="sub-box1">
+            <img
+              class="third-image"
+              src="../images/Business support-cuate 1.png"
+              alt=""
+            />
+            <h4>Earn Rewards</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eius
+              expedita dolor a amet magnam nesciunt vitae fugit inventore
+              minima.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------why us page end--------------------------------------------- -->
+
+    <script src="./land.js"></script>
+    <script src="./graph.js" defer></script>
+    <script src="./bundle.js" defer></script>
+  </body>
+</html>

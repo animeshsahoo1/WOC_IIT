@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+
+    <div class="darken">
+      <div id="pop-result-box">
+        <img src="" id="result-img">
+        <div class="text-box">
+          <h1 id="result-text">You're a  <span id="animal">wolf</span> </h1>
+          <div class="stats" id="stats">
+            <h4 id="stats-wpm"> </h4>
+            <h4 id="stats-accuracy"> </h4>
+            <h4 id="stats-rating"> </h4>
+            <p id="message">you need to work on improving wpm by practice</p>
+          </div>
+          <div class="buttons">
+            <button id="btn-to-board">leaderboard</button>
+            <button id="try-again">try again</button>
+          </div>
+        </div>
+    </div>
+    </div>
+    
+
+
+    <header>
+      <a href="#" class="logo">logo</a>
+      <!-- <ul class="navlist">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#lessons">Lessons</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul> -->
+
+      <div class="profile">
+        <img src="../images/profile.png" class="profile-img" />
+      </div>
+    </header>
+
+    <div class="container">
+      <h1>Typing Test</h1>
+
+      <div class="options">    
+        <div>
+          <label for="difficulty">Difficulty:</label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <div>
+          <label for="time">Time:</label>
+          <select id="time">
+            <option value="30">30 seconds</option>
+            <option value="60">1 minute</option>
+            <option value="120">2 minutes</option>
+          </select>
+        </div>
+          <button id="start-test">Start Test</button>
+      </div>
+
+      <div class="timer-results">
+      <div class="timer-container">
+        <svg class="timer-svg" width="120" height="120" viewBox="0 0 120 120">
+            <!-- Background Circle, cx,cy are 60,60 to center the circle in 120px by 120px viewbox or canvas -->
+            <circle class="timer-circle timer-circle-bg" cx="60" cy="60" r="50"></circle>
+            <!-- Progress Circle -->
+            <circle class="timer-circle timer-circle-progress" cx="60" cy="60" r="50"></circle>
+        </svg>
+        <div class="timer-content">
+            <div class="timer-number" id="timerNumber">60</div>
+            <div class="timer-label">sec</div>
+        </div>
+      </div>
+      <div id="results">
+        <p>WPM: <span id="wpm"> </span></p>
+        <p>CPM: <span id="cpm"> </span></p>
+        <p>Accuracy: <span id="accuracy"> </span>%</p>
+      </div>
+    </div>
+    
+      <div id="typing-test">
+        <div id="typing-paragraph">
+         <!-- add span tags from javascripty -->
+        </div>
+      </div>
+
+      
+
+    </div>
+  
+    <script type="module" src="main.js"></script>
+    
+  </body>
+</html>
