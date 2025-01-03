@@ -95,7 +95,7 @@ if (loggedUserId) {
                 if(maxWPM>=35){
                     showBadge('35wpm');
                 }
-                if(maxAccuracy=100){
+                if(maxAccuracy===100){
                     showBadge('full-accuracy')
                 }
                 // Retrieve the top5 array from localStorage

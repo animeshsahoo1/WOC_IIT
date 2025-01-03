@@ -30,8 +30,7 @@
                 <div id="select-time">
                     <label for="time">Metric:</label>
                     <select id="time">
-                      <option value="wpm">WPM</option>
-                      <option value="accuracy">Accuracy</option>
+                      <option value="wpm">WPM/Accuracy</option>
                     </select>
                   </div>
             </div>
@@ -92,6 +91,11 @@
         <div class="pop-leaderboard expand hidden">
             <div class="top-pop">
                 <h1>LEADERBOARD</h1>
+                <div class="search-container">
+                    <input type="text" id="search" placeholder="Sort by country..." />
+                    <button id="sortButton">Search</button>
+                </div>
+            
                 <h2 class="close"><i class="fas fa-times"></i></h2>
             </div>
             <div class="full-leaderboard">

@@ -204,3 +204,48 @@ header{
 .close:hover{
     opacity: 0.5;
 }
+
+/* Search container styling */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    margin-right: -550px;
+}
+
+/* Input field styling */
+.search-container input {
+    padding: 5px 20px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 70%; /* 70% width for the input */
+    margin-right: 10px;
+    outline: none;
+}
+
+/* Button styling */
+.search-container button {
+    padding: 5px 20px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.search-container button:hover {
+    background-color: #45a049;
+}
+
+/* Input focus effect */
+.search-container input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}

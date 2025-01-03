@@ -84,6 +84,7 @@ async function getAllUserRatings() {
                     userId: doc.id,
                     name: userData.name,
                     rating: maxRating,
+                    country: userData.country,
                 });
             }
         });
@@ -127,6 +128,8 @@ async function displayLeaderboard() {
     });
     localStorage.setItem('topUserRatings', JSON.stringify(topUserRatings));
 }
+
+
 
 
 
@@ -280,3 +283,42 @@ async function displayFullLeaderboard() {
         FullLeaderboardContainer.appendChild(leaderboardItem);
     });
 }
+async function displayFullLeaderboardByCountry(country) {
+    const userRatings = await getAllUserRatings();
+    console.log('User Ratings:', userRatings);
+    console.log('working1')
+    userRatings.forEach(rating => console.log(rating.country));
+
+    // Filter ratings by country
+    const filteredRatings = userRatings.filter(rating => rating.country === country);
+    console.log('Filtered Ratings:', filteredRatings)
+    // Sort ratings in descending order
+    const sortedRatings = filteredRatings.sort((a, b) => b.rating - a.rating);
+    
+    // Display sorted ratings
+    const FullLeaderboardContainer = document.querySelector('.full-leaderboard');
+    FullLeaderboardContainer.innerHTML = ''; // Clear previous leaderboard
+    console.log('working2')
+
+    sortedRatings.forEach((rating, index) => {
+        const leaderboardItem = document.createElement('div');
+       
+        leaderboardItem.classList.add('leaderboard-element');
+        leaderboardItem.innerHTML = `
+        <div class="leaderboard-element">
+            <div class="text">
+                <p class="rank"> ${index + 1} </p>
+                <p class="name"> ${rating.name}</p>
+                <p class="rating"> ${rating.rating} </p>
+            </div>
+        </div>
+        `;
+        FullLeaderboardContainer.appendChild(leaderboardItem);
+    });
+}
+function search() {
+    let country = document.getElementById('search').value;
+    displayFullLeaderboardByCountry(country);  // Call displayFullLeaderboard with the country value
+}
+const sortButton=document.getElementById('sortButton');
+sortButton.addEventListener('click',search)
