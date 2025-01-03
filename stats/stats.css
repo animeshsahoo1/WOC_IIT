@@ -41,6 +41,7 @@ header{
     width: 90px;
     height: 60px;
     margin-top: -10px;
+    cursor: pointer;
 }
 .profile{
     height: 40px;

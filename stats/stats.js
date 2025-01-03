@@ -321,4 +321,9 @@ function search() {
     displayFullLeaderboardByCountry(country);  // Call displayFullLeaderboard with the country value
 }
 const sortButton=document.getElementById('sortButton');
-sortButton.addEventListener('click',search)
+sortButton.addEventListener('click',search);
+
+const typeRivals=document.querySelector('.logo');
+typeRivals.addEventListener('click',()=>{
+    window.location.href='../landing_page/land.html'
+})

@@ -158,3 +158,8 @@ const profilePic=document.querySelector('.main-profile');
 profilePic.addEventListener('click',()=>{
     window.location.href='../profile_picture/profile.html';
 })
+
+const typeRivals=document.querySelector('.logo');
+typeRivals.addEventListener('click',()=>{
+    window.location.href='../landing_page/land.html'
+})

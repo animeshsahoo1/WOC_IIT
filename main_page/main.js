@@ -481,3 +481,9 @@ tryAgainButton.addEventListener('click',()=>{
     window.location.href = "./main.html";
 });
 
+// /----------------------------------------------------------
+
+const typeRivals=document.querySelector('.logo');
+typeRivals.addEventListener('click',()=>{
+    window.location.href='../landing_page/land.html'
+})

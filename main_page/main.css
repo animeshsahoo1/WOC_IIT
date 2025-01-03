@@ -41,7 +41,7 @@ header{
 .logo{
     width: 95px;
     height: 70px;
-
+    cursor: pointer;
 }
 .navlist{
     display: flex;
