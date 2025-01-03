@@ -10,21 +10,29 @@
 <body>
     <div class="container">
         <div class="navbar">
-            <a href="#" class="logo ">logo</a>
+            <img src="../images/white logo.png" class="logo">
             <div class="profile navbar-pic">
                 <img src="../images/profile.png" class="profile-img" />
             </div>
             <i class="fa-solid fa-user-group"></i>
-            <i class="fa-solid fa-chart-simple"></i>
+            <a href="../stats/stats.html"><i class="fa-solid fa-chart-simple"></i></a>
             <i class="fa-solid fa-gear"></i>
+            <div class="red-box" title="log-out">
+                <i class="fa-solid fa-right-from-bracket log-out"></i>
+            </div>
         </div>
+
+
         <div class="page">
             <div class="details">
                 <div class="left-side">
-                    <div class="profile">
+                    <div class="profile main-profile">
                         <img src="../images/profile.png" class="profile-img" />
                     </div>
+                    <div class="left-down">
                     <p>user id:</p>
+                    <button class="user-btn" title="copy"></button>
+                    </div>
                 </div>
                 <div class="right-side">
                     <div class="personal-info">
@@ -33,9 +41,9 @@
                         <p id="country">Country: ANIMESH</p>
                     </div>
                     <div class="typing-info">
-                        <p class="WPM"> WPM: </p>
-                        <p class="WPM"> ACCURACY: </p>
-                        <p class="rating">RATING: 5000 </p>
+                        <p id="WPM"> WPM: </p>
+                        <p id="ACCURACY"> ACCURACY: </p>
+                        <p id="RATING">RATING: 5000 </p>
                     </div>
                     
                 </div>
@@ -43,12 +51,22 @@
             </div>
             <h1>BADGES</h1>
             <div class="badges-list">
-                <div class="badge-element"></div>
-                <div class="badge-element"></div>
-                <div class="badge-element"></div>
-                <div class="badge-element"></div>
-                <div class="badge-element"></div>
-                <div class="badge-element"></div>
+                <div class="badge-element" id="35wpm" title="Type in 35 WPM, which is average of most people">
+                    <img src="../images/35 f.png" alt="">
+                </div>
+                <div class="badge-element" id="50wpm" title="Type with a speed of 50 WPM">
+                    <img src="../images/50 f.png" alt="">
+                </div>
+                <div class="badge-element" id="75wpm" title="Type with a speed of 75WPM">
+                    <img src="../images/75 f.png" alt="">
+                </div>
+                <div class="badge-element" id="full-accuracy" title="Achieved an accuracy of 100%">
+                    <img src="../images/Accuracy.png" alt="">
+                </div>
+                <div class="badge-element" id="top3" title="Present in the top 3 of the leaderboard">
+                    <img src="../images/top 3 f.png" alt="">
+                </div>
+                
             </div>
         </div>
     </div>

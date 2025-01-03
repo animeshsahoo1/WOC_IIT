@@ -38,11 +38,9 @@ header{
     transition: all 0.50s ease;
 }
 .logo{
-    display: flex;
-    align-items: center;
-    color: var(--text-color);
-    font-size: 33px;
-    font-weight: 700;
+    width: 90px;
+    height: 60px;
+    margin-top: -10px;
 }
 .profile{
     height: 40px;
@@ -56,8 +54,13 @@ header{
     cursor: pointer;
     border: #111111 solid 0.5px;
     /* object-fit: fill; default value of object fit is fill */
+    transition: all 0.1s ease;
 }
-
+.profile-img:hover{
+    filter: brightness(0.85);
+    transform: translateY(-5px);
+    transform: scale(1.1);
+}
 /* ----------------------------------content--------------------------------------------- */
 
 .container{

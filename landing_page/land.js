@@ -24,6 +24,7 @@ const signUpForm=document.getElementById('signup');
 const closeButtons = document.querySelectorAll('.close');
 const authDiv = document.querySelector('.auth');
 const LandingLog=document.querySelector('.nav-icons .btn');
+const mainBtn=document.getElementById('big-register-btn');
 
 function showAuth() {
   authDiv.style.display = 'flex'; // Ensure it uses 'flex' to match your layout
@@ -34,6 +35,9 @@ function hideAuth() {
   authDiv.style.display = 'none';
 }
 LandingLog.addEventListener('click', ()=>{
+  showAuth();
+})
+mainBtn.addEventListener('click', ()=>{
   showAuth();
 })
 closeButtons.forEach((button) => {

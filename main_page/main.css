@@ -39,16 +39,9 @@ header{
     transition: all 0.50s ease;
 }
 .logo{
-    display: flex;
-    align-items: center;
-    color: var(--text-color);
-    font-size: 33px;
-    font-weight: 700;
-}
-.logo i{
-    vertical-align: middle;
-    margin-right: 8px;
-    color: var(--main-color);
+    width: 95px;
+    height: 70px;
+
 }
 .navlist{
     display: flex;
@@ -66,6 +59,12 @@ header{
     cursor: pointer;
     border: #111111 solid 0.5px;
     /* object-fit: fill; default value of object fit is fill */
+    transition: all 0.1s ease;
+}
+.profile-img:hover{
+    filter: brightness(0.85);
+    transform: translateY(-5px);
+    transform: scale(1.1);
 }
 /* ---------------------------------HEADER PART IS NOW OVER---------------------------------------- */
 .options{
@@ -279,4 +278,15 @@ header{
 #try-again:hover{
     filter: brightness(0.9);
     filter: drop-shadow(1px 1px 1px #212121);
+}
+/* message of badges */
+.messageDiv{
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeOut 7s forwards;
 }

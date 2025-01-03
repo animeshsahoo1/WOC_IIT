@@ -10,7 +10,7 @@
     display: flex;
 }
 .navbar{
-    width: 3.5%;
+    width: 4.5%;
     background-color: black;
     height: 100vh;
     display: flex;
@@ -20,7 +20,9 @@
 
 }
 .navbar .logo{
-    font-size: 1.5rem;
+    width: 55px;
+    height: 40px;
+    margin-bottom: -15px;
 }
 .navbar i{
     font-size: 1.3rem;
@@ -62,6 +64,9 @@
     object-fit: cover; 
     backdrop-filter:brightness(0.4);
 }
+.profile-img:hover{
+    filter: brightness(80%);
+}
 .left-side{
     display: flex;
     flex-direction: column;
@@ -101,6 +106,55 @@
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
 }
+
+.left-down{
+    display: flex;
+    width: 120px;
+    align-items: center;
+}
+.user-btn{
+    height: 17px;
+    width: 50px;
+    margin-left: 10px;
+    overflow-x: hidden;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+.red-box{
+    width: 75%;
+    height: 30px;
+    background-color: rgb(204, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin-top: 430px;
+    cursor: pointer;
+}
+.red-box i{
+    color: black;
+    font-size: 1rem;
+}
+.red-box:hover{
+    opacity: 0.75;
+}
 .badge-element{
-    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 246.16px;
+    height: 263.16px;
+    background-color: aliceblue;
+    display: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.badge-element img{
+    width: 100%;
+    height: 70%;
+}
+.badge-element:hover{
+    transform: translateY(-10px); /* Moves the card up slightly */
+    transform: translatex(-3px); /* Moves the card up slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }

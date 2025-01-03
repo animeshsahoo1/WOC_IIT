@@ -11,6 +11,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
 
+     <!-- box icons -->
+     <link
+     rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,14 +28,16 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
 
+
   <body>
     <header>
-      <a href="#" class="logo">logo</a>
+      
+      <img src="../images/black logo.png" class="logo">
 
       <ul class="navlist">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About Us</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#services">Our Services</a></li>
+        <li><a href="#lessons">Lessons</a></li>
         <li><a href="#contact">Contact Us</a></li>
       </ul>
 
@@ -44,11 +52,7 @@
 
         <h1 class="form-title">Register</h1>
         <form method="post" action="">
-          <div
-            id="signUpMessage"
-            class="messageDiv"
-            style="display: none"
-          ></div>
+          <div id="signUpMessage" class="messageDiv" style="display: none"></div>
           <div class="input-group">
             <i class="fas fa-user"></i>
             <input type="text" name="Name" id="name" placeholder="name" required />
@@ -154,7 +158,7 @@
       </div>
       
         <div class="home-btn">
-          <a href="#" class="btn">Get Started Now</a>
+          <a href="#" class="btn" id="big-register-btn">Get Started Now</a>
         </div>
       
     </section>
@@ -168,12 +172,13 @@
           </h1>
           <div class="right-box">
             <p>
-              30 WPM is average typing speed for most people, check where you
+              35 WPM is average typing speed for most people, check where you
               stand with our leaderboard features. <br />Gain an Increase in
               your typing speed by at least 30% by practicing in regular
               intervals, with help of our lessons and tests.
             </p>
           </div>
+          
         </div>
       </div>
     </section>
@@ -185,7 +190,7 @@
         <div class="write">
           <h2 class="we">So many reasons to start</h2>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, qui?
+            Wanna know why should you increase your typing speed?
           </p>
         </div>
 
@@ -198,9 +203,7 @@
             />
             <h4>Take lessons</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eius
-              expedita dolor a amet magnam nesciunt vitae fugit inventore
-              minima.
+              Take best lessons compiled from the internet, taking lessons will allow you to improve faster. learn the best techniques and tips to type faster.
             </p>
           </div>
 
@@ -212,9 +215,7 @@
             />
             <h4>Efficiency</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eius
-              expedita dolor a amet magnam nesciunt vitae fugit inventore
-              minima.
+              Learning to type faster will increase your efficiency may it be job, just chatting with friends or some other work, a small amount of effort will save you a lot of time.
             </p>
           </div>
 
@@ -226,16 +227,70 @@
             />
             <h4>Earn Rewards</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eius
-              expedita dolor a amet magnam nesciunt vitae fugit inventore
-              minima.
+              Unlock badges and get rewards by hitting milestones in accuracy, speed, and consistency. Keep practicing to claim more exciting rewards and achievements!
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ------------------------------------------why us page end--------------------------------------------- -->
+    <!-- ------------------------------------------Lessons--------------------------------------------- -->
+    <section class="lessons" id="lessons">
+      <div class="lesson-container">
+        <div class="lesson-text">
+          <h1>Improve By Taking Short <span>Lesson</span></h1>
+          <div class="right-box">
+            <p>Do you know the correct way of using all your fingers to type? if not check this small lesson out. by taking lessons you are more 
+            likely to improve faster than by just practicing. </p>
+          </div>
+          <div class="home-btn">
+            <a href="https://www.wikihow.com/Type-Faster" class="btn" id="lesson-btn">Take Lesson</a>
+          </div>
+        </div>
+
+        <div class="lesson-img">
+          <img src="../images/lesson.JPG">
+        </div>
+       
+      </div>
+
+    </section>
+
+
+    <!-- --------------------------------------------contact us---------------------------------------------->
+    <section class="contact" id="contact">
+      <div class="contact-content">
+
+          <div class="contact-text">
+              <h2>Contact Us</h2>
+              <p>A decent typing speed is really important in today's fast paced world.
+                Contact us through the following ways, if you have any problems or want to partner with us.
+                We will reach back to you as soon as possible within 24 hours, also follow our socials 
+                to recieve new updates about the site and other things.
+              </p>
+              <div class="social">
+                  <a href="https://www.instagram.com/?hl=en"><i class='bx bxl-instagram-alt' ></i></a>
+                  <a href="https://www.facebook.com/"><i class='bx bxl-facebook' ></i></a>
+                  <a href="https://x.com/?lang=en"><i class='bx bxl-twitter' ></i></a>
+                  <a href="https://github.com/animeshsahoo1/WOC_IIT"><i class='bx bxl-github' ></i></a>
+              </div>
+          </div>
+
+         <div class="details">
+          
+          <div class="main-d">
+              <a href="#"><i class='bx bx-mobile-alt'></i>9556322001</a>
+          </div>
+          <div class="main-d">
+              <a href="https://www.youtube.com/"><i class='bx bxl-youtube' ></i>Type-Rivals</a>
+          </div>
+          <div class="main-d">
+              <a href="#"><i class='bx bxs-bell' ></i>Subscribe</a>
+          </div>
+         </div> 
+      </div>
+   </section>
+
 
     <script src="./land.js"></script>
     <script src="./graph.js" defer></script>

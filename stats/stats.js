@@ -53,6 +53,14 @@ if (loggedUserId) {
     console.error("No logged user found in localStorage.");
 }
 
+
+const profilePic=document.querySelector(".profile");
+profilePic.addEventListener('click', ()=>{
+    window.location.href="../profile_expand/expand.html"
+})
+
+
+// -------------------------------------------------------------------------------------
 const colref= collection(db,'users');
 
 async function getAllUserRatings() {
@@ -86,6 +94,8 @@ async function getAllUserRatings() {
     }
 }
 
+//array for the top 5 usres, but storing id is hard because of how this code is written, so just store their rating in localstorage and use that to show the top5 badge instead
+let topUserRatings=[];
 
 async function displayLeaderboard() {
     const userRatings = await getAllUserRatings();
@@ -98,6 +108,7 @@ async function displayLeaderboard() {
     leaderboardContainer.innerHTML = ''; // Clear previous leaderboard
 
     sortedRatings.slice(0, 5).forEach((rating, index) => {
+        console.log(topUserRatings);
         const leaderboardItem = document.createElement('div');
         const text= document.createElement('div');
         leaderboardItem.classList.add('leaderboard-element');
@@ -110,6 +121,11 @@ async function displayLeaderboard() {
         leaderboardItem.appendChild(text);
         leaderboardContainer.appendChild(leaderboardItem);
     });
+    sortedRatings.slice(0, 3).forEach((rating, index) => {
+        topUserRatings.push(rating.rating);
+        
+    });
+    localStorage.setItem('topUserRatings', JSON.stringify(topUserRatings));
 }
 
 

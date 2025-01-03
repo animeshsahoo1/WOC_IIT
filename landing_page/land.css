@@ -38,17 +38,10 @@ header{
     transition: all 0.50s ease;
 }
 .logo{
-    display: flex;
-    align-items: center;
-    color: var(--text-color);
-    font-size: 33px;
-    font-weight: 700;
+    width: 95px;
+    height: 70px;
 }
-.logo i{
-    vertical-align: middle;
-    margin-right: 8px;
-    color: var(--main-color);
-}
+
 .navlist{
     display: flex;
 }
@@ -151,15 +144,7 @@ span::after{
 .highlight{
     font-weight: 700;
 }
-.home-img{
-   height: 70vh;
-   position: absolute;
-   width: auto;
-   display: flex;
-   overflow: hidden;
-   bottom: 0px;
 
-}
 header.sticky{
     padding: 12px;
     background: var(--other-color);
@@ -413,10 +398,6 @@ input:focus~label,input:not(:placeholder-shown)~label{
 }
 
 
-
-
-
-
 /* ----------------------------------------------------------why us page----------------------------------------------------------------- */
 
 .third-page{
@@ -471,4 +452,116 @@ gap: 2rem;
 .sub-box1:hover{
     background:linear-gradient(#5ba000,#A3D95D) ;
     color: #000000;
+}
+
+/* ------------------------------------------lessons---------------------------------------------  */
+.lessons{
+    width: 100%;
+    height: 90vh;
+    z-index: 500;/*above evrything else excpet header whivcch has 1000 z index*/
+    position: relative;
+    border-radius: 35px;
+    margin-top: -30px;
+    background-color: white;
+}
+
+.lesson-container{
+    display: flex;
+    flex: 1;
+    gap: 40px;
+    margin-top: 30px;
+}
+.lesson-container img{
+    width: 115%;
+    height: auto;
+    border-radius: 15px;
+    
+}
+.lesson-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; 
+}
+.lesson-text h1{
+    font-size: 3.5rem;
+}
+.lesson-text .right-box{
+    height: 200px;
+    width: 600px;
+    padding: 0;
+    margin-left: -100px;
+    margin-bottom: -60px;
+}
+
+
+/* --------------------------------------------contact page---------------------------------- */
+#contact{
+    width: 100%;
+    height: 70vh;
+    background-color: #111111;
+}
+.contact-content{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.contact-text{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.contact-text h2{
+    font-size: 5rem;
+    color: white;
+    margin-bottom: 10px;
+}
+.contact-text p{
+    color: var(--second-color);
+    font-size: var(--p-font);
+    max-width: 950px;
+    line-height: 30px;
+    margin-bottom: 3rem;
+}
+.social i{
+display: inline-block;
+font-size: 32px;
+color: var(--second-color);
+margin: 0 20px;
+transition: all 0.5s ease;
+}
+.social .clr i{
+    color: var(--main-color);
+}
+.social i:hover{
+    color: var(--main-color);
+}
+.details{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+}
+.main-d{
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 600;
+}
+.main-d i{
+    vertical-align: middle;
+    margin-right: 12px;
+    font-size: 28px;
+    color: var(--main-color);
+}
+.main-d a{
+    text-decoration: none;
+}
+#lesson-btn{
+    margin-left: -350px;
+    margin-top: -70px;
+    transform: scale(0.8);
 }

@@ -92,8 +92,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-
-
 function updateChart() {
   lineGraph.data.labels = date; // Update x-axis with dates
   lineGraph.data.datasets[0].data = wpm; // Update WPM data

@@ -53,6 +53,11 @@ if (loggedUserId) {
     console.error("No logged user found in localStorage.");
 }
 
+const profilePic=document.querySelector(".profile");
+profilePic.addEventListener('click', ()=>{
+    window.location.href="../profile_expand/expand.html"
+})
+
 
 
 /*-----------------------------------------Timer------------------------------------------------*/
@@ -101,9 +106,75 @@ function startCircleTimer(durationInSeconds) {
 }
 
 /*-----------------------------------Select options------------------------------------------------- */
+const easyWords = [
+    "their", "while", "about", "could", "those", "would", "other", "there", 
+    "after", "which", "might", "being", "these", "every", "again", "below", 
+    "until", "where", "since", "among", "shall", "given", "until", "great", 
+    "quite", "small", "swift", "young", "these", "tried", "shall", "seven", 
+    "above", "many", "eight", "doing", "below", "found", "third", "among", 
+    "often", "being", "eight", "shall", "every", "seven", "among", "first", 
+    "upon", "aside", "under", "quite", "above", "their", "these", "seven", 
+    "still", "swift", "tried", "doing", "which", "where", "young", "about", 
+    "might", "given", "eight", "shall", "those", "could", "being", "among", 
+    "below", "other", "until", "great", "small", "swift", "would", "these", 
+    "again", "many", "tried", "those", "first", "found", "aside", "often", 
+    "where", "since", "upon"
+];
 
-// Declare a variable to store the selected time globally
-let selectedTime = 60; // Default time
+const hardWords = [
+    "Quick", "zephyr", "jumps;", "swiftly,", "brown", "fox.", "Azure", "dreams,", 
+    "fizzle,", "then", "pop!", "Quiet", "moments,", "yielding", "to", "noisy", "chaos.", 
+    "Purple", "grapes,", "juicy", "and", "sweet.", "Crimson", "sunset,", "painted", 
+    "across", "the", "sky.", "Gloomy", "weather,", "but", "hope", "remains.", 
+    "Silver", "spoon,", "elegant", "and", "refined.", "Yellow", "sun,", "bright", "and", 
+    "warm.", "Orange", "tiger,", "striped", "and", "fierce.", "Green", "leaves,", 
+    "dancing", "in", "the", "breeze.", "Blue", "ocean,", "vast", "and", "deep.", 
+    "Small", "bird,", "singing", "a", "sweet", "song.", "Giant", "tree,", "reaching", 
+    "for", "the", "sky.", "Tiny", "flower,", "blooming", "brightly.", "Clever", 
+    "cat,", "stealthy", "and", "agile.", "Happy", "dog,", "wagging", "its", "tail.", 
+    "Funny", "joke,", "making", "everyone", "laugh.", "Sad", "clown,", "hiding", 
+    "his", "grief.", "Angry", "bull,", "charging", "forward.", "Scared", "mouse,", 
+    "hiding", "in", "a", "hole.", "Brave", "knight,", "fighting", "for", "justice.", 
+    "Wise", "owl,", "perched", "on", "a", "branch.", "Silly", "goose,", "honking", 
+    "loudly.", "Old", "castle,", "standing", "proudly.", "New", "car,", "shiny", 
+    "and", "fast.", "Big", "house,", "comfortable", "and", "spacious.", "Little", 
+    "bug,", "crawling", "on", "the", "wall.", "Long", "road,", "stretching", 
+    "into", "the", "distance."
+];
+
+const midWords = [
+    "quince", "fjord", "glyph", "jazzy", "fizzle", "spigot", "musing", "quinoa", 
+    "bluffs", "zigzag", "scythe", "jargon", "sphinx", "fuchsia", "bronze", "rhythm", 
+    "oxygen", "frigid", "vortex", "zircon", "plague", "swerve", "yacht", "chintz", 
+    "quirk", "brim", "craze", "wryly", "slump", "thump", "gorge", "prism", "whisk", 
+    "grunt", "snarl", "toxin", "shoal", "churn", "whack", "bruit", "waver", "gauze", 
+    "knead", "glyphs", "bistro", "swirl", "mound", "havoc", "snipe", "scowl", "jazzy.",
+    "fizzle.", "spigot.", "musing.", "quinoa!", "bluffs.", "zigzag.", "scythe.", "jargon.", 
+    "sphinx.", "fuchsia.", "bronze.", "rhythm.", "oxygen.", "frigid.", "vortex.", "zircon", 
+    "plague?", "swerve.", "yacht.", "chintz.", "quirk", "brim.", "craze.", "wryly.", "slump."
+];
+
+
+// Function to jumble words create a paragraph
+function generateJumbledParagraph(wordsArray, wordCount = 170) {
+const shuffled = wordsArray.slice().sort(() => Math.random() - 0.5);//randomly sort
+return shuffled.slice(0, wordCount).join(' ');
+}
+  
+  
+let text = 'Please press "start test" ';
+let textContainer = document.getElementById('typing-paragraph');
+let textArr = text.split('');
+let htmlArr = textArr.map((item, index, array) => {
+    if (item === ' ') {
+        return `<span class="space" id="span${index}">${item}</span>`;
+    }
+    return `<span class="char" id="span${index}">${item}</span>`;
+});
+textContainer.innerHTML = htmlArr.join('');
+
+let selectedTime = 60; // Default time->store globally to acces in other areas
+
 document.getElementById('start-test').addEventListener('click', () => {
     // Get the selected values
     const difficulty = document.getElementById('difficulty').value;
@@ -112,20 +183,40 @@ document.getElementById('start-test').addEventListener('click', () => {
     
     // Do something with the selected values
     console.log(`Selected Difficulty: ${difficulty}`);
+    if(difficulty==='hard'){
+        let HardParagraph = generateJumbledParagraph(hardWords);
+        text=HardParagraph;
+    }
+    else if(difficulty==='easy'){
+        let EasyParagraph= generateJumbledParagraph(easyWords);
+        text=EasyParagraph;
+    }
+    else{
+        let MidParagraph=generateJumbledParagraph(midWords);
+        text=MidParagraph;
+    }
+    
+    textArr = text.split('');
+    htmlArr = textArr.map((item, index, array) => {
+        if (item === ' ') {
+            return `<span class="space" id="span${index}">${item}</span>`;
+        }
+        return `<span class="char" id="span${index}">${item}</span>`;
+    });
+    textContainer.innerHTML = htmlArr.join(''); // Update the DOM with the new paragraph
+
     timeText.innerHTML = `${selectedTime}`; // Display the selected time
     
     // You can now use these values as needed
-    alert(`You chose ${difficulty} difficulty and ${selectedTime} seconds!`);
+    alert(`Start the typing test by Preassing on a keyboard button!`);
 });
 
 /*-----------------------------------Typing part------------------------------------------------- */
 
-let textContainer = document.getElementById('typing-paragraph');
-let resultsContainer = document.getElementById('results');
 let wpmText = document.getElementById('wpm');
 let cpmText = document.getElementById('cpm');
 let accuracyText = document.getElementById('accuracy');
-let correctChars = 0; // To track the number of correctly typed characters
+let correctChars = 0; // To track the number of correctly typed chars
 
 
 
@@ -133,19 +224,9 @@ const invalidKeys = 'F1 F2 F3 F4 F5 F6 F7 F8 F9 F10 F11 F12 Escape Tab CapsLock 
     ' ',
 );
 
-const text = 'i hope your day is going well thanks for trying out my typing test did you know that this project was actually made for hackclub, hackclub is a worldwide, student led coding club for teens that strives to provide a comfortable and educational place to collaborate with others!';
-const textArr = text.split('');
-const htmlArr = textArr.map((item, index, array) => {
-    if (item === ' ') {
-        return `<span class="space" id="span${index}">${item}</span>`;
-    }
-    return `<span class="char" id="span${index}">${item}</span>`;
-});
-textContainer.innerHTML = htmlArr.join('');
 let errors = [];
 let firstTime = true;
 let currentPos = 0;
-
 // Create the cursor element
 let cursor = document.createElement("span");
 cursor.id = "cursor";
@@ -300,6 +381,15 @@ function updateResults() {
     accuracyText.textContent = `${accuracy}`;
 }
 
+function showMessage(message, divId){
+    var messageDiv= document.getElementById(divId);
+    messageDiv.style.display='block';//initially display is set to none in html by inline css and opacity is 0 in land.css
+    messageDiv.innerHTML=message;
+    messageDiv.style.opacity=1;
+    setTimeout(function(){
+      messageDiv.style.opacity=0;
+    },5000)
+  }
 
 async function handleEnd(){
     const statWpm=document.getElementById('stats-wpm');
@@ -361,13 +451,16 @@ console.log("Accuracy:", accuracy);
         message.textContent='You are kinda slow!, but not for long. Practice daily';
 
     }
+    if(wpm>=35 || accuracy===100){
+        showMessage('you may have recieved new badges check out your profile', 'badgeMessage')
+    }
 
     console.log(statImg.src);
     console.log(animal.textContent);
     
 
     try {
-        // Append session data to the typingHistory array it wull get created if not alredy prsent
+        // Add session data to the typingHistory array it wull get created if not alredy prsent
         await updateDoc(userDocRef, {
             typingHistory: arrayUnion(sessionData),
         });
