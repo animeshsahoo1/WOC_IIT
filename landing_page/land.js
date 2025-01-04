@@ -1,6 +1,10 @@
 const header =document.querySelector("header");
+const navbarItems =document.querySelectorAll(".navlist a");
 window.addEventListener("scroll", function() {
     header.classList.toggle("sticky", window.scrollY > 50);
+    navbarItems.forEach((item)=>{
+      item.classList.toggle("scroll-active", window.scrollY > 50)
+    });
 })
 
 const words = document.querySelectorAll(".navlist a");
