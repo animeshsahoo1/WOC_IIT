@@ -5,15 +5,7 @@ window.addEventListener("scroll", function() {
 
 const words = document.querySelectorAll(".navlist a");
 
-window.addEventListener("scroll", function() {
-  words.forEach(word => {
-    if (window.scrollY > 70) { 
-      word.classList.add("scroll-active");
-    } else {
-      word.classList.remove("scroll-active");
-    }
-  });
-});
+
 
 /*----------------------JS for authentication form-------------------------- */
 
