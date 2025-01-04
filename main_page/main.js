@@ -451,7 +451,7 @@ console.log("Accuracy:", accuracy);
         message.textContent='You are kinda slow!, but not for long. Practice daily';
 
     }
-    if(wpm>=35 || accuracy===100){
+    if(wpm>=50 || accuracy===100){
         showMessage('you may have recieved new badges check out your profile', 'badgeMessage')
     }
 

@@ -18,6 +18,24 @@
     --bg-color: #fff; 
     --yellow-color: #FFD000;
 }
+@keyframes appear {
+    0%{
+        opacity: 0;
+        scale: 0.5;
+        transform: translateX(-250px);
+    }
+    100%{
+        opacity: 1;
+        scale: 1;
+        transform: translateX(0px);
+    }
+}
+.animate{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
 body{
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -106,14 +124,6 @@ section{
 }
 
 
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%; 
-    }
-}
 
 span{
     color: var(--main-color);
@@ -140,9 +150,12 @@ span::after{
     width: 0%;
     background-color: var(--main-color);
     animation: elongate 1.5s ease 0.5s forwards;
+  
 }
-.highlight{
+
+.highlight::after{
     font-weight: 700;
+    animation-timeline: view();
 }
 
 header.sticky{
@@ -494,7 +507,9 @@ gap: 2rem;
     margin-left: -100px;
     margin-bottom: -60px;
 }
-
+.lesson-highlight::after{
+    animation-timeline: view();
+}
 
 /* --------------------------------------------contact page---------------------------------- */
 #contact{
