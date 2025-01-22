@@ -238,7 +238,7 @@ textContainer.insertBefore(cursor, textContainer.firstChild);
 
 document.addEventListener('keydown', event => {
     if (event.key === ' ') {
-        event.preventDefault();
+        event.preventDefault();//prevent defaut action of scrolling when pressed on spacebar
     }
     if (firstTime && !invalidKeys.includes(event.key)) {
         if(selectedTime===60){
@@ -304,7 +304,7 @@ function handleKey(event) {
                 currentPos--; // Move one step back,thi automatically increase margin to the right 
                 span = document.getElementById(`span${currentPos}`).style;
                 span.color = ''; // Reset the color of the previously typed character
-                correctChars--; 
+                correctChars++; 
                 textContainer.style.marginLeft = `${40 - currentPos * 1.2}%`; 
                 backspaceRequired=false;
             }
@@ -375,6 +375,8 @@ function updateResults() {
     // Display results in the results container
     if(wpm < 0) wpm = 0;
     if(cpm < 0) cpm = 0;
+    if(accuracy < 0) accuracy = 0;
+    if(accuracy >100) accuracy = 100;
 
     wpmText.textContent = `${wpm}`;
     cpmText.textContent = `${cpm}`;

@@ -52,12 +52,13 @@ uploadForm.addEventListener('submit', async (event) => {
 
     const file = inputFile.files[0]; // Get the selected file
     if (file) {
-        const formData = new FormData();
+        const formData = new FormData();//create a new key and value pairs data object
         formData.append("file", file); 
         formData.append("upload_preset", UPLOAD_PRESET); 
 
         try {
             // Upload the file to Cloudinary
+            //The Fetch API interface allows web browser to make HTTP requests to web servers(cloudinary server) and reciev http response.
             const response = await fetch(CLOUDINARY_URL, {
                 method: "POST",
                 body: formData,

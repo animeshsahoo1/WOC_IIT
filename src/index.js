@@ -37,7 +37,7 @@ function showMessage(message, divId){
 const signUp= document.getElementById('submitSignUp')
 
 signUp.addEventListener('click', (event)=>{
-  event.preventDefault();
+  event.preventDefault();//prevents reloading a page on submit
   const email = document.getElementById('email').value;
   const name = document.getElementById('name').value;
   const country = document.getElementById('country').value;

@@ -53,7 +53,11 @@ let lineGraph = new Chart(lineChart, {
       tooltip: {
         callbacks: {
           label: function(tooltipItem) {
-            return tooltipItem.raw + ' WPM';  // 'raw' gives the actual value
+            if (tooltipItem.dataset.label === 'WPM') {
+              return tooltipItem.raw + ' WPM';  // Tooltip for WPM dataset
+            } else if (tooltipItem.dataset.label === 'Accuracy') {
+              return tooltipItem.raw + '%';  // Tooltip for Accuracy dataset
+            }
           }
         }
       },
